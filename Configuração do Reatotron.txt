@@ -1,0 +1,21 @@
+0 fechar o bundler pra instalar certo
+
+1 npm i reactotron-react-native      reactotron-redux      reactotron-redux-saga       caso irá utilizar
+
+2 criar pasta config / ReactotronConfig.js
+
+4 colocar dentro de ReactotronConfig.js
+
+import Reactotron from 'reactotron-react-native';
+
+if (__DEV__) {
+	const tron = Reactotron.configure({ host: '192.168.0.122' })
+		.useReactNative()
+		.connect();
+
+	tron.clear();
+
+	console.tron = tron;
+}
+
+6 no index.js da aplicação import './config/ReactotronConfig'; na primeira linha
